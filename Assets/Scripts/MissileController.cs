@@ -41,9 +41,11 @@ public class MissileController : MonoBehaviour
     private void PredictMovement(float leadTimePercentage)
     {
         Rigidbody TargetRigidBody = target.gameObject.GetComponentInChildren<Rigidbody>();
-        var predictionTime = Mathf.Lerp(0, _maxTimePrediction, leadTimePercentage);
-        
-        _standardPrediction = TargetRigidBody.position + TargetRigidBody.velocity * predictionTime;
+        if (TargetRigidBody != null)
+        {
+            var predictionTime = Mathf.Lerp(0, _maxTimePrediction, leadTimePercentage);
+            _standardPrediction = TargetRigidBody.position + TargetRigidBody.velocity * predictionTime;
+        }
     }
 
     private void AddDeviation(float leadTimePercentage)

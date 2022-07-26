@@ -29,7 +29,6 @@ public class FPSMouvement : MonoBehaviour
     private void Start()
     {
         animator = this.gameObject.transform.GetChild(1).GetComponentInChildren<WeaponAnimator>();
-        Debug.Log(animator);
     }
     void Update()
     {
@@ -39,9 +38,7 @@ public class FPSMouvement : MonoBehaviour
 
     private void Move()
     {
-        Debug.Log(velocity.y);
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        
       
         if (isGrounded && velocity.y < 0)
         {

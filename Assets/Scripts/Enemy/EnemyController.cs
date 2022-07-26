@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponentInChildren<Rigidbody>();
         TargetsNavigation = new List<GameObject>();
 
         for (int i = 0; i <= 5; i++)
@@ -43,10 +43,11 @@ public class EnemyController : MonoBehaviour
             m_targetPoint.transform.position = new Vector3(randPositionX, altitude, randPositionZ);
             TargetsNavigation.Add(m_targetPoint);
         }
-        Player = GameObject.FindGameObjectWithTag("Player");
+        
     }
     void Update()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         if (!isDead)
         {
             if (!IsNavigateState)

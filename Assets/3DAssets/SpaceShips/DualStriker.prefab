@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Life: 100
   speed: 50
-  AtatckRange: 300
+  AttackRange: 100
   MaxFollowingRange: 500
   MinFollowingRange: 200
   Bullet: {fileID: 862432862624673888, guid: 0c2f0a148a3aeef40bb5595c61fcf9a6, type: 3}
@@ -568,5 +568,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0

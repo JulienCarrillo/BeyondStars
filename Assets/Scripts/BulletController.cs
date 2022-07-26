@@ -8,6 +8,7 @@ public class BulletController : MonoBehaviour
     private string TargetTag;
     public int Damage;
     
+    
 
     void Start()
     {
