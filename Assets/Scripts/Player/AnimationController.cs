@@ -32,6 +32,7 @@ public class AnimationController : MonoBehaviour
     {
         animator.SetBool("IsLanding", false);
     }
+   
 
 
 }

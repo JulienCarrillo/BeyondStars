@@ -102,8 +102,8 @@ public class PlayerController : MonoBehaviour
 
                 Instantiate(ActualShipGFX, transform.position + new Vector3(0,4,0), transform.rotation);
                 Instantiate(FPSPlayer, transform.position + new Vector3(10,4,0), transform.rotation);
-                
-                Destroy(gameObject);
+                Destroy(GameObject.FindGameObjectWithTag("Playership"));
+
             }
         }
         if (Input.GetKey(KeyCode.LeftShift))
