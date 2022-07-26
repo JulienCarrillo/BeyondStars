@@ -6,20 +6,22 @@ public class FPSMouvement : MonoBehaviour
 
     public CharacterController controller;
     public float speed = 12f;
+    public int Damage = 2;
     public float gravity = -5f;
-    public Transform groundCheck;
     public float groundDistance = 0.4f;
-    public LayerMask groundMask;
-    public GameObject SpaceShip;
     private float NextShot = 0.15f;
     public float FireDelay = 0.5f;
-    public int Damage = 2;
+    private float jumpHeight = 3f;
+    private float initialSpeed;
+    public Transform groundCheck;
+    public LayerMask groundMask;
+    public GameObject SpaceShip;
     public Camera camera;
     public GameObject UIText;
     public RectTransform Reticle;
-    private RectTransform initialSizeReticle;
-    private float jumpHeight = 3f;
     private WeaponAnimator animator;
+    
+
 
     Vector3 velocity;
     bool isGrounded;
@@ -29,6 +31,8 @@ public class FPSMouvement : MonoBehaviour
     private void Start()
     {
         animator = this.gameObject.transform.GetChild(1).GetComponentInChildren<WeaponAnimator>();
+
+        initialSpeed = speed;
     }
     void Update()
     {
@@ -69,10 +73,30 @@ public class FPSMouvement : MonoBehaviour
         {
             animator.StopShooting();
         }
+
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             Zoom();
         }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Run();
+        }else
+        {
+            speed = initialSpeed;
+        }
+
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            controller.height = 1.5f;
+        }
+        else
+        {
+            controller.height = 4;
+        }
+        
+       
         //Remonter dans l'avion
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -81,6 +105,11 @@ public class FPSMouvement : MonoBehaviour
                 GoToSpaceShip();
             }
         }
+    }
+
+    private void Run()
+    {
+        speed = 30f;
     }
     
     private void Jump()
