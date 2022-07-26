@@ -295,6 +295,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4360660825388931613, guid: b0ef101870949e5478a299a1224fc261,
+        type: 3}
+      propertyPath: field of view
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4360660825388931613, guid: b0ef101870949e5478a299a1224fc261,
+        type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605421239945219594, guid: b0ef101870949e5478a299a1224fc261,
+        type: 3}
+      propertyPath: m_Height
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645236671636833703, guid: b0ef101870949e5478a299a1224fc261,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645236671636833703, guid: b0ef101870949e5478a299a1224fc261,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.263
+      objectReference: {fileID: 0}
     - target: {fileID: 8700675643885133236, guid: b0ef101870949e5478a299a1224fc261,
         type: 3}
       propertyPath: ShootFX

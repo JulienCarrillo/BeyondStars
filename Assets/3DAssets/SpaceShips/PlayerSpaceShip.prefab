@@ -162,7 +162,11 @@ MonoBehaviour:
   Missile: {fileID: 0}
   heathBar: {fileID: 0}
   ShootingText: {fileID: 0}
-  m_timeRemainingLock: 3
+  LandingText: {fileID: 0}
+  timeRemainingLock: 0
+  CanChangeScene: 0
+  NextScene: 
+  FPSPlayer: {fileID: 0}
 --- !u!95 &1155534801039700695
 Animator:
   serializedVersion: 3
