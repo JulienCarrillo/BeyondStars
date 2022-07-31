@@ -1,0 +1,13 @@
+Utilisation Moteur rendu procedural :
+Num layer = nombre de couche = plus il y de couche, plus la montagne est detaillé.
+
+
+Base roughtness = base de la rugosité : plus on aura de rugosité, plus on aura de montagne.
+
+roughtness = rugosité : plus il y a de rugosité, plus la montagne aura de "pli" 
+
+Persistence = plus il y a de persistance, plus les montagne sont haute 
+
+Centre = permet de faire bouger les montage 
+
+Min value  = plus la min value est haute , plus les montagnes disparaise 

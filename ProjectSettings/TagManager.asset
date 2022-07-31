@@ -10,6 +10,9 @@ TagManager:
   - MainCam
   - PlayerShip
   - Playership
+  - FX
+  - PlayerFPS
+  - Portal
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - 
   - Interactable
   - Landable
-  - 
+  - PlayerFPS
   - 
   - 
   - 

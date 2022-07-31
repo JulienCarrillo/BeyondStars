@@ -49,8 +49,6 @@ public class PlayerController : MonoBehaviour
   
     void Start()
     {
-      
-        
         heathBar = GameObject.FindGameObjectWithTag("HeathBar").GetComponent<Image>();
         Cursor.lockState = CursorLockMode.Locked;
         //to hide the curser
@@ -215,7 +213,6 @@ public class PlayerController : MonoBehaviour
         {
             animationController.StartAttackAnimation();
             GameObject NewBullet = Instantiate(Bullet, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
-            NewBullet.GetComponent<BulletController>().IsPlayerTarget = false;
             NewBullet.GetComponent<BulletController>().Damage = damage;
             NewBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 100000f);
             Destroy(NewBullet, 1.0f);

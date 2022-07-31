@@ -5,9 +5,10 @@ public class FPSMouvement : MonoBehaviour
 {
 
     public CharacterController controller;
-    public float speed = 12f;
+    public int Life = 100;
+    public float speed = 15f;
     public int Damage = 2;
-    public float gravity = -5f;
+    public float gravity = -100f;
     public float groundDistance = 0.4f;
     private float NextShot = 0.15f;
     public float FireDelay = 0.5f;
@@ -20,7 +21,10 @@ public class FPSMouvement : MonoBehaviour
     public GameObject UIText;
     public RectTransform Reticle;
     private WeaponAnimator animator;
-    
+    private bool CanTakePortal = false;
+    private PortalController PortalController = null;
+
+
 
 
     Vector3 velocity;
@@ -104,6 +108,10 @@ public class FPSMouvement : MonoBehaviour
             {
                 GoToSpaceShip();
             }
+            if(CanTakePortal)
+            {
+                PortalController.TakePortal();
+            }
         }
     }
 
@@ -135,8 +143,12 @@ public class FPSMouvement : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo))
         {
-            EnemyControllerFPS Enemy = hitInfo.transform.GetComponent<EnemyControllerFPS>();
-            if(Enemy != null)
+            EnemyControllerFPS EnemyFPS = hitInfo.transform.GetComponent<EnemyControllerFPS>();
+            EnemyController Enemy = hitInfo.transform.GetComponent<EnemyController>();
+            if(EnemyFPS != null)
+            {
+                StartCoroutine(EnemyFPS.TakeDamage(Damage));
+            }else if (Enemy != null)
             {
                 Enemy.TakeDamage(Damage);
             }
@@ -148,7 +160,7 @@ public class FPSMouvement : MonoBehaviour
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hitInfo, 50f, 1 << 8))
         {
-                Interact(hitInfo.transform.tag);
+                Interact(hitInfo.transform.tag,hitInfo.transform.gameObject);
                 UIText.SetActive(true);  
         }
         else
@@ -157,16 +169,32 @@ public class FPSMouvement : MonoBehaviour
         }
     }
 
-    private void Interact(string InterractObjectName)
+    public void TakeDamage(int amount)
+    {
+        Life -= amount;
+        if (Life <= 0f)
+        {
+            Die();
+        }
+    }
+
+
+    private void Interact(string InterractObjectName, GameObject interraclable)
     {
         switch (InterractObjectName)
         {
             case "Player":
-
                 CanGoInSpaceShip = true;
                 break;
+
+            case "Portal":
+                PortalController = interraclable.GetComponent<PortalController>();
+                CanTakePortal = true;
+                break;
+
             default:
                 CanGoInSpaceShip = false;
+                CanTakePortal = false;
                 break;
         }
         
@@ -176,6 +204,11 @@ public class FPSMouvement : MonoBehaviour
     {
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         Instantiate(SpaceShip, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
+
+    private void Die()
+    {
         Destroy(gameObject);
     }
 }

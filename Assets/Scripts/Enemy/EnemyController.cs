@@ -64,7 +64,6 @@ public class EnemyController : MonoBehaviour
     public void NavigateState()
     {
         GameObject target = TargetsNavigation[index];
-        Debug.Log(target.name);
         if (Vector3.Distance(target.transform.position, transform.position) > 5f)
         {
             transform.LookAt(target.transform);
@@ -94,8 +93,7 @@ public class EnemyController : MonoBehaviour
         
         if (DistanceBetweenPlayer < AttackRange && Time.time > NextShot)
         {
-            attackSpeed = attackSpeed / 1.5f;
-            Debug.Log("EnemyAttack");
+            /*attackSpeed = attackSpeed / 1.5f;*/
             Attack();
             NextShot = Time.time + FireDelay;
         }
@@ -109,9 +107,8 @@ public class EnemyController : MonoBehaviour
         foreach(GameObject BulletSpawn in BulletsSpawner)
         {
             GameObject NewBullet = Instantiate(Bullet, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
-            NewBullet.GetComponent<BulletController>().IsPlayerTarget = true;
             NewBullet.GetComponent<BulletController>().Damage = damage;
-            NewBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 100000f);
+            NewBullet.GetComponent<Rigidbody>().AddForce(BulletSpawn.transform.forward * 100000f);
             Destroy(NewBullet, 1.0f);
         }
        
@@ -144,6 +141,6 @@ public class EnemyController : MonoBehaviour
         isDead = true;
         prefabList[1].SetActive(false);
         prefabList[2].SetActive(true);
-        Destroy(gameObject,10f);
+        Destroy(gameObject,5f);
     }
 }
