@@ -22,7 +22,7 @@ public class FPSMouvement : MonoBehaviour
     public RectTransform Reticle;
     private WeaponAnimator animator;
     private bool CanTakePortal = false;
-    private PortalController PortalController = null;
+    private LevelController PortalController = null;
 
 
 
@@ -34,6 +34,7 @@ public class FPSMouvement : MonoBehaviour
 
     private void Start()
     {
+
         animator = this.gameObject.transform.GetChild(1).GetComponentInChildren<WeaponAnimator>();
 
         initialSpeed = speed;
@@ -110,7 +111,7 @@ public class FPSMouvement : MonoBehaviour
             }
             if(CanTakePortal)
             {
-                PortalController.TakePortal();
+             /*   PortalController.TakePortal();*/
             }
         }
     }
@@ -188,7 +189,7 @@ public class FPSMouvement : MonoBehaviour
                 break;
 
             case "Portal":
-                PortalController = interraclable.GetComponent<PortalController>();
+                PortalController = interraclable.GetComponent<LevelController>();
                 CanTakePortal = true;
                 break;
 

@@ -7,8 +7,9 @@ public class RadarController : MonoBehaviour
     public float radarDistance = 20, blipSize = 15;
     public bool usePlayerDirection = true;
     public Transform player;
-    public GameObject blipRedPrefab;
-    public string redBlipTag = "Enemy";
+    public GameObject EnemyBlipPrefab,EnemyBasePrefab, PlanetBlipPrefab, PlayerBasePrefab,PlayerShipPrefab;
+    public string EnemyTag = "Enemy", EnemyBaseTag = "EnemyBase", PlanetTag = "Planet", PlayerBaseTag = "Portal" , PlayerShipTag = "Player";
+    public bool isPlayerFPS;
 
     private float radarWidth, radarHeight, blipWidth, blipHeight;
 
@@ -23,7 +24,21 @@ public class RadarController : MonoBehaviour
     void Update()
     {
         RemoveAllBlips();
-        DisplayBlips(redBlipTag, blipRedPrefab);
+        if (isPlayerFPS)
+        {
+            DisplayBlips(EnemyTag, EnemyBlipPrefab);
+            DisplayBlips(EnemyBaseTag, EnemyBasePrefab);
+            DisplayBlips(PlayerBaseTag, PlayerBasePrefab);
+            DisplayBlips(PlayerShipTag, PlayerShipPrefab);
+        }
+        else
+        {
+            DisplayBlips(EnemyTag, EnemyBlipPrefab);
+            DisplayBlips(EnemyBaseTag, EnemyBasePrefab);
+            DisplayBlips(PlanetTag, PlanetBlipPrefab);
+            DisplayBlips(PlayerBaseTag, PlayerBasePrefab);
+        }
+       
     }
 
     private void DisplayBlips(string tag, GameObject prefabBlip)

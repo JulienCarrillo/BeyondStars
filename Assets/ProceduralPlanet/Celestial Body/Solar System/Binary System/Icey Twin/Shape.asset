@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b0ccad980254b91a2375e9a49c87df, type: 3}
   m_Name: Shape
   m_EditorClassIdentifier: 
-  randomize: 0
-  seed: 0
+  randomize: 1
+  seed: 5922
   heightMapCompute: {fileID: 7200000, guid: 13008f929df404f2c9c4d64443449aed, type: 3}
   perturbVertices: 1
   perturbCompute: {fileID: 7200000, guid: 0cc4782d709194aa5a22ed5e9ab8bf09, type: 3}

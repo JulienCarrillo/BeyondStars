@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc781a665a4a49f09ef89610d5413ee, type: 3}
   m_Name: Shading
   m_EditorClassIdentifier: 
-  randomize: 0
-  seed: 0
+  randomize: 1
+  seed: 7057
   terrainMaterial: {fileID: 2100000, guid: 9d4176e24d3764c798792cdbed1a224c, type: 2}
   hasAtmosphere: 0
   atmosphereSettings: {fileID: 0}

@@ -157,15 +157,15 @@ Material:
     - _ColorG: {r: 0.18867922, g: 0.09410887, b: 0.05428977, a: 1}
     - _ColorR: {r: 0.6428245, g: 0.6981132, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlatColA: {r: 1, g: 1, b: 1, a: 0}
-    - _FlatColB: {r: 0, g: 0.11788455, b: 0.13207549, a: 0}
+    - _FlatColA: {r: 0.16, g: 0.8, b: 0.6694643, a: 1}
+    - _FlatColB: {r: 0.16, g: 0.49245116, b: 0.8, a: 1}
     - _FresnelCol: {r: 0, g: 0.33589864, b: 1, a: 1}
     - _GrassCol: {r: 0.4033858, g: 0.4433962, b: 0.064836234, a: 1}
     - _Params: {r: 0.14, g: 0, b: 2.12, a: 20}
     - _PoleNoiseWeights: {r: 1.59, g: 0.69, b: 0.77, a: 0}
     - _SandCol: {r: 1, g: 1, b: 1, a: 1}
-    - _ShoreCol: {r: 0, g: 0, b: 0, a: 0}
+    - _ShoreCol: {r: 0.22540967, g: 0.23066624, b: 0.7165248, a: 1}
     - _SnowCol: {r: 1, g: 1, b: 1, a: 1}
-    - _SteepColA: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 0}
-    - _SteepColB: {r: 1, g: 1, b: 1, a: 0}
+    - _SteepColA: {r: 0.35447803, g: 0.5935194, b: 0.32219946, a: 1}
+    - _SteepColB: {r: 0.68407553, g: 0.8, b: 0.64, a: 1}
     - _TestParams: {r: 5, g: 0.18, b: 1.58, a: 1}

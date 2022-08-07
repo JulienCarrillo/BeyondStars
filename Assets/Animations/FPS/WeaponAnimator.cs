@@ -11,7 +11,7 @@ public class WeaponAnimator : MonoBehaviour
     }
     public void StartShooting()
     {
-        Debug.Log("ShootAnim");
+
         animator.SetBool("IsShooting", true);
     }
 

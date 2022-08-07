@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: d5c6be7383598e049b0549a2a21c9327, type: 3}
+  m_Texture: {fileID: 2800000, guid: 01ebc016a59572f449a66047250eabe0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -88,5 +88,18 @@ MonoBehaviour:
   blipSize: 15
   usePlayerDirection: 1
   player: {fileID: 0}
-  blipRedPrefab: {fileID: 0}
-  redBlipTag: Enemy
+  EnemyBlipPrefab: {fileID: 1565174205715056227, guid: 2baa58b4812fdff4187a1ab99fd3fd16,
+    type: 3}
+  EnemyBasePrefab: {fileID: 547670931565288659, guid: e3377a64564800846998535665c73b84,
+    type: 3}
+  PlanetBlipPrefab: {fileID: 3247138377238344809, guid: 745288419eac5a04188656b63aad8a84,
+    type: 3}
+  PlayerBasePrefab: {fileID: 547670931565288659, guid: e3377a64564800846998535665c73b84,
+    type: 3}
+  PlayerShipPrefab: {fileID: 7614662162722742301, guid: 35b8e8a3dac255f45b4510b43581bd1b,
+    type: 3}
+  EnemyTag: Enemy
+  EnemyBaseTag: EnemyBase
+  PlanetTag: Planet
+  PlayerBaseTag: PlayerBase
+  PlayerShipTag: Enemy

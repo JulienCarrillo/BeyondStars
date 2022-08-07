@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 6715217568882868939}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -807,7 +807,9 @@ MonoBehaviour:
     m_Bits: 1024
   walkpoint: {x: 0, y: 0, z: 0}
   walkPointRange: 40
+  timeRemainingAnimation: 5
   timeBetwennAttacks: 0.6
+  timeRemainingGetHit: 2
   sightRange: 80
   attackRange: 30
   playerInSightRange: 0

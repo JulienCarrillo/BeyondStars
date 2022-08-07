@@ -2,8 +2,9 @@
 using UnityEngine;
 
 [ExecuteInEditMode, ImageEffectAllowedInSceneView]
-public class CustomPostProcessing : MonoBehaviour {
 
+public class CustomPostProcessing : MonoBehaviour {
+	
 	public PostProcessingEffect[] effects;
 	Shader defaultShader;
 	Material defaultMat;

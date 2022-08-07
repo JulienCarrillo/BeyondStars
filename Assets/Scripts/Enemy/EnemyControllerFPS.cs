@@ -51,7 +51,7 @@ public class EnemyControllerFPS : MonoBehaviour
     {
 
         target = GameObject.FindGameObjectWithTag("PlayerFPS").transform;
-
+        Debug.Log(target);
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange,targetLayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange,targetLayer);
 
@@ -63,7 +63,7 @@ public class EnemyControllerFPS : MonoBehaviour
 
     private void Patrolling()
     {
-
+        Debug.Log("Patroling");
         EnemyAnimator.StopShooting();
         EnemyAnimator.StopRunning();
         EnemyAnimator.StartWalking();
@@ -155,6 +155,8 @@ public class EnemyControllerFPS : MonoBehaviour
     private void Die()
     {
         EnemyAnimator.Dying();
+        agent.SetDestination(transform.position);
         Destroy(gameObject,3f);
     }
+    
 }

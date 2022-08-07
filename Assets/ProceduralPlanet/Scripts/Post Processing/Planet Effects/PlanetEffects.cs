@@ -25,10 +25,14 @@ public class PlanetEffects : PostProcessingEffect {
 		CustomPostProcessing.RenderMaterials (source, destination, materials);
 	}
 
+
 	void Init () {
+		
 		if (effectHolders == null || effectHolders.Count == 0 || !Application.isPlaying) {
 			var generators = FindObjectsOfType<CelestialBodyGenerator> ();
+			Debug.Log(" Generator int init  : "+ generators[0]);
 			effectHolders = new List<EffectHolder> (generators.Length);
+
 			for (int i = 0; i < generators.Length; i++) {
 				effectHolders.Add (new EffectHolder (generators[i]));
 			}
@@ -53,9 +57,7 @@ public class PlanetEffects : PostProcessingEffect {
 		if (effectHolders.Count > 0) {
 			Camera cam = Camera.current;
 			Vector3 camPos = cam.transform.position;
-
 			SortFarToNear (camPos);
-
 			for (int i = 0; i < effectHolders.Count; i++) {
 				EffectHolder effectHolder = effectHolders[i];
 				Material underwaterMaterial = null;
@@ -96,22 +98,24 @@ public class PlanetEffects : PostProcessingEffect {
 		float dstToNearClipPlaneCorner = new Vector3 (halfWidth, halfHeight, cam.nearClipPlane).magnitude;
 		return dstToNearClipPlaneCorner;
 	}
-
+	
 	public class EffectHolder {
 		public CelestialBodyGenerator generator;
 		public OceanEffect oceanEffect;
 		public AtmosphereEffect atmosphereEffect;
-
+		
 		public EffectHolder (CelestialBodyGenerator generator) {
 			this.generator = generator;
+			Debug.Log("Generator in Effect Holder : " + generator);
 			if (generator.body.shading.hasOcean && generator.body.shading.oceanSettings) {
 				oceanEffect = new OceanEffect ();
 			}
 			if (generator.body.shading.hasAtmosphere && generator.body.shading.atmosphereSettings) {
 				atmosphereEffect = new AtmosphereEffect ();
 			}
-		}
 
+		}
+		
 		public float DstFromSurface (Vector3 viewPos) {
 			return Mathf.Max (0, (generator.transform.position - viewPos).magnitude - generator.BodyScale);
 		}
@@ -136,4 +140,5 @@ public class PlanetEffects : PostProcessingEffect {
 			}
 		}
 	}
+    
 }

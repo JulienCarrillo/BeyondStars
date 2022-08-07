@@ -36,6 +36,9 @@ public class CelestialBodyGenerator : MonoBehaviour {
 
 	static Dictionary<int, SphereMesh> sphereGenerators;
 
+	//test
+	public Vector3 Sun;
+
 	void Start () {
 		if (InGameMode) {
 			cam = Camera.main;
@@ -44,6 +47,7 @@ public class CelestialBodyGenerator : MonoBehaviour {
 	}
 
 	void Update () {
+		
 		if (InEditMode) {
 			HandleEditModeGeneration ();
 		}
@@ -396,8 +400,12 @@ public class CelestialBodyGenerator : MonoBehaviour {
 	void OnDestroy () {
 		ReleaseAllBuffers ();
 	}
+   
+			
+				
+	
 
-	bool CanGenerateMesh () {
+    bool CanGenerateMesh () {
 		return ComputeHelper.CanRunEditModeCompute && body.shape && body.shape.heightMapCompute;
 	}
 

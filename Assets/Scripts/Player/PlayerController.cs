@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float NextShot = 0.15f;
     public float FireDelay = 0.5f;
     public GameObject[] BulletsSpawner;
+    public Transform LandingRay;
     public LineRenderer line;
     public GameObject FX;
     LayerMask layer = 1 << 8;
@@ -92,6 +93,7 @@ public class PlayerController : MonoBehaviour
                 ChangeScene(NextScene);
             }
         }
+        //Rework afficher UI
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (IsLanding)
@@ -128,11 +130,11 @@ public class PlayerController : MonoBehaviour
     }
     private void CheckIfLanding()
     {
-
+        //BUG :  ROTATE LE DEPART DU RAYON AVEC LE VAISSEAU 
         RaycastHit hitInfo;
-        line.SetPosition(0, transform.position);
+        line.SetPosition(0, LandingRay.position);
 
-        if (Physics.Raycast(transform.position,-Vector3.up, out hitInfo, 50f, 1<<9))
+        if (Physics.Raycast(LandingRay.position,-Vector3.up, out hitInfo, 100f, 1<<9))
         {
             //Trigger UI
             LandingText.SetActive(true);
