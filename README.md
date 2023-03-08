@@ -1,4 +1,4 @@
-# eyondStars
+# BeyondStars
 
 BeyondStars est un jeu vidéo de type FPS / simulation de pilotage d'un vaisseau spatial sur le thème de l'exploration spatiale. Le joueur parcourt des systèmes solaires et affronte des ennemis à travers la galaxie.
 
