@@ -19,13 +19,13 @@ BeyondStars est un jeu vidéo de type FPS / simulation de pilotage d'un vaisseau
 
 ## Installation
 
-1.Assurez-vous d'avoir Unity 2019.4.24f1 installé sur votre ordinateur.
-2.Clonez le dépôt BeyondStars.
-3.Ouvrez Unity et sélectionnez "Open Project".
-4.Naviguez jusqu'au dossier BeyondStars et sélectionnez-le.
-5.Attendez que Unity importe tous les assets.
-6.Ouvrez la scène "MainMenu" située dans le dossier "Scenes".
-7.Appuyez sur le bouton "Play" pour exécuter le jeu.
+1. Assurez-vous d'avoir Unity 2019.4.24f1 installé sur votre ordinateur.
+2. Clonez le dépôt BeyondStars.
+3. Ouvrez Unity et sélectionnez "Open Project".
+4. Naviguez jusqu'au dossier BeyondStars et sélectionnez-le.
+5. Attendez que Unity importe tous les assets.
+6. Ouvrez la scène "MainMenu" située dans le dossier "Scenes".
+7. Appuyez sur le bouton "Play" pour exécuter le jeu.
 
 ### Contribuer
 
